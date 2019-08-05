@@ -1,4 +1,11 @@
-## 冒泡排序
+
+# 其它
+* [c++在线编译器,c++语言在线解释器,在线编程网站](https://www.dooccn.com/cpp/)
+* [十大经典排序算法最强总结 - hellozhxy的博客 - CSDN博客](https://blog.csdn.net/hellozhxy/article/details/79911867)
+* [十大经典排序算法（动图演示） - 一像素 - 博客园](https://www.cnblogs.com/onepixel/p/7674659.html)
+
+
+# 冒泡排序
 
 * 无优化
 ```cpp
@@ -114,8 +121,10 @@ int main(int argc, char** argv){
 ```
 
 
-## 选择排序
 
+
+
+# 选择排序
 
 * 直接选择排序
 ```cpp
