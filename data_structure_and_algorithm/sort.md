@@ -198,3 +198,81 @@ int main(int argc, char** argv){
     return 0;
 }
 ```
+
+
+
+
+
+# 插入排序
+
+* 两个for循环
+
+```cpp
+#include <iostream>
+
+void insert_sort(int* a, int n){
+    for(int i=1; i<n; i++){
+        int tmp = a[i];
+        int j=i;
+        for(j=i; j>0; j--){
+            if(a[j-1] > tmp){
+                a[j] = a[j-1];
+            }
+            else{
+                break;
+            }
+        }
+        a[j] = tmp;
+    }
+    
+}
+
+int main(int argc, char** argv){
+    int a[5] = {3,2,7,6,1};
+    insert_sort(a, 5);
+    
+    for(int i=0; i<5; i++){
+        std::cout << a[i] << " ";
+    }
+    std::cout << std::endl;
+    
+    return 0;
+}
+```
+
+
+* 一个for循环，一个while
+```cpp
+#include <iostream>
+
+void swap(int* a, int *b){
+    int tmp = *a; 
+    *a = *b;
+    *b = tmp;
+}
+
+void insert_sort(int* a, int n){
+    for(int i=0; i<n-1; i++){
+        int current = a[i+1];
+        int ind = i;
+        while(a[ind] > current){
+            a[ind+1] = a[ind];
+            ind--;
+        }
+        a[ind+1] = current;
+    }
+    
+}
+
+int main(int argc, char** argv){
+    int a[5] = {3,2,7,6,1};
+    insert_sort(a, 5);
+    
+    for(int i=0; i<5; i++){
+        std::cout << a[i] << " ";
+    }
+    std::cout << std::endl;
+    
+    return 0;
+}
+```
