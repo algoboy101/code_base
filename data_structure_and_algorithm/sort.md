@@ -205,6 +205,8 @@ int main(int argc, char** argv){
 
 # 插入排序
 
+## 直接插入排序
+
 * 两个for循环
 
 ```cpp
@@ -267,6 +269,44 @@ void insert_sort(int* a, int n){
 int main(int argc, char** argv){
     int a[5] = {3,2,7,6,1};
     insert_sort(a, 5);
+    
+    for(int i=0; i<5; i++){
+        std::cout << a[i] << " ";
+    }
+    std::cout << std::endl;
+    
+    return 0;
+}
+```
+
+
+
+## 希尔排序
+
+```cpp
+#include <iostream>
+
+void shell_sort(int* a, int n){
+
+    int gap = n/2;
+
+    while(gap > 0){
+        for(int i=0; i<n; i++){
+            int ind = i;
+            int current = a[ind];
+            while(ind > 0 && a[ind-gap] > current){
+                a[ind] = a[ind-gap];
+                ind -= gap;
+            }
+            a[ind] = current;
+        }
+        gap /= 2;
+    }
+}
+
+int main(int argc, char** argv){
+    int a[5] = {3,2,7,6,1};
+    shell_sort(a, 5);
     
     for(int i=0; i<5; i++){
         std::cout << a[i] << " ";
